@@ -7,7 +7,8 @@ from .models import Project, Tag
 from .forms import ProjectForm, ReviewForm
 from .utils import searchProjects, paginateProjects
 
-
+def index(request):
+    return render(request, 'index.html')
 def projects(request):
     projects, search_query = searchProjects(request)
     custom_range, projects = paginateProjects(request, projects, 6)
